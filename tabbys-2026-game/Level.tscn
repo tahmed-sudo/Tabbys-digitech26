@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://xuhycqdapved"]
+
+[ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Player.tscn" id="1_bexhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
+size = Vector2(1160, 59)
+
+[node name="Node2D" type="Node2D" unique_id=1871949922]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=36518026]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 651.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=631772013]
+offset_left = 519.0
+offset_top = 510.0
+offset_right = 559.0
+offset_bottom = 550.0
+color = Color(1, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648390045]
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=528492071]
+offset_left = -4.0
+offset_top = 594.0
+offset_right = 1149.0
+offset_bottom = 649.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1318964359]
+position = Vector2(572, 627.5)
+shape = SubResource("RectangleShape2D_0rwas")
+
+[node name="CharacterBody2D" parent="." unique_id=772824052 instance=ExtResource("1_bexhn")]
+position = Vector2(238, 518)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
+position = Vector2(136, 62)
