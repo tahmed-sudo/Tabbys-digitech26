@@ -2,23 +2,343 @@
 
 [ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Player.tscn" id="1_bexhn"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bexhn"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7iv1"]
+bg_color = Color(0, 1, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(1160, 59)
 
 [node name="Node2D" type="Node2D" unique_id=1871949922]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=36518026]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1153.0
-offset_bottom = 651.0
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1848178871]
+offset_top = -1.0
+offset_right = 1149.0
+offset_bottom = 599.0
+color = Color(0, 0.83137256, 1, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=631772013]
-offset_left = 519.0
-offset_top = 510.0
-offset_right = 559.0
-offset_bottom = 550.0
-color = Color(1, 0, 0, 1)
+[node name="house rects" type="ColorRect" parent="." unique_id=673430127]
+offset_left = 52.0
+offset_top = 477.0
+offset_right = 186.0
+offset_bottom = 600.0
+color = Color(0.5858467, 1.8049031e-06, 4.3317675e-07, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="house rects" unique_id=1039046204]
+position = Vector2(-5.253147, 9.982164)
+scale = Vector2(0.95490533, 0.9204179)
+color = Color(0.02489823, 0.73318505, 0.77311903, 1)
+polygon = PackedVector2Array(75.778015, -121.66452, 5.5012207, -10.392883, 147.51892, -10.392883)
+uv = PackedVector2Array(75.778015, -121.66452, 5.5012207, -10.392883, 147.51892, -10.392883)
+
+[node name="ColorRect" type="ColorRect" parent="house rects" unique_id=1606644480]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 69.0
+offset_right = 84.0
+offset_bottom = 123.0
+color = Color(0.56170356, 0.21969613, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="house rects" unique_id=1068703751]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 89.0
+offset_right = 82.0
+offset_bottom = 95.0
+color = Color(1, 1, 0, 1)
+
+[node name="Cloud rects" type="ColorRect" parent="." unique_id=1236515075]
+offset_left = 176.0
+offset_top = 215.0
+offset_right = 285.0
+offset_bottom = 242.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects" unique_id=197661346]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect" unique_id=1221046289]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect/ColorRect" unique_id=1016936010]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect/ColorRect/ColorRect" unique_id=2115945923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects" unique_id=1275368882]
+layout_mode = 0
+offset_left = 187.0
+offset_top = -154.0
+offset_right = 296.0
+offset_bottom = -127.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2" unique_id=2001189018]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect" unique_id=1993845319]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect/ColorRect" unique_id=2120962853]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1211203648]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects/ColorRect2" unique_id=52453120]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 160.0
+offset_right = 422.0
+offset_bottom = 187.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2" unique_id=274093885]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect" unique_id=2026519993]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect/ColorRect" unique_id=2140194906]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1902130632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2" unique_id=1528256800]
+layout_mode = 0
+offset_left = 334.0
+offset_top = -53.0
+offset_right = 443.0
+offset_bottom = -26.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2" unique_id=1930877147]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect" unique_id=366677831]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect" unique_id=1952857034]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1606558107]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2" unique_id=2074567673]
+layout_mode = 0
+offset_left = -594.0
+offset_top = -14.0
+offset_right = -485.0
+offset_bottom = 13.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2" unique_id=1692411027]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect" unique_id=430384308]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect" unique_id=923547996]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1782405898]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2" unique_id=1765968412]
+layout_mode = 0
+offset_left = 302.0
+offset_top = -76.0
+offset_right = 411.0
+offset_bottom = -49.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2" unique_id=913521948]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect" unique_id=776689486]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect" unique_id=296447672]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1149836595]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="ColorRect2" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2" unique_id=106018642]
+layout_mode = 0
+offset_left = -673.0
+offset_top = 15.0
+offset_right = -564.0
+offset_bottom = 42.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2" unique_id=1550301306]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 12.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect" unique_id=2057254323]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect" unique_id=231499147]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="Cloud rects/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect2/ColorRect/ColorRect/ColorRect" unique_id=1061595734]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5400001
+anchor_top = 1.0
+anchor_right = -1.5400001
+anchor_bottom = 1.0
+offset_left = 37.840004
+offset_top = 9.0
+offset_right = 49.840004
+offset_bottom = 24.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1917986497]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1222714484]
+offset_left = 851.0
+offset_top = 261.0
+offset_right = 1051.0
+offset_bottom = 293.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bexhn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t7iv1")
+value = 78.0
+show_percentage = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648390045]
 
@@ -34,7 +354,7 @@ position = Vector2(572, 627.5)
 shape = SubResource("RectangleShape2D_0rwas")
 
 [node name="CharacterBody2D" parent="." unique_id=772824052 instance=ExtResource("1_bexhn")]
-position = Vector2(238, 518)
+position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
 position = Vector2(136, 62)
