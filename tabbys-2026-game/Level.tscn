@@ -379,7 +379,7 @@ color = Color(0, 1, 0, 1)
 position = Vector2(572, 627.5)
 shape = SubResource("RectangleShape2D_0rwas")
 
-[node name="CharacterBody2D" parent="." unique_id=772824052 instance=ExtResource("1_bexhn")]
+[node name="CharacterBody2D" parent="." unique_id=772824052 groups=["Player"] instance=ExtResource("1_bexhn")]
 position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
@@ -387,6 +387,12 @@ position = Vector2(136, 62)
 
 [node name="Spawn_trigger" type="Area2D" parent="." unique_id=1847600203]
 position = Vector2(852, 557)
+
+[node name="Marker2D" type="Marker2D" parent="Spawn_trigger" unique_id=1208584992]
+position = Vector2(94, 19)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawn_trigger" unique_id=163126112]
+position = Vector2(184, 19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_trigger" unique_id=215227318]
 position = Vector2(0, -14)
