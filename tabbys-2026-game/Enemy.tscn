@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bso8oc3ia75cm"]
+
+[ext_resource type="Script" uid="uid://dw81wx63luwpc" path="res://enemy.gd" id="1_tt7e2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqquq"]
+height = 34.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1881185564]
+script = ExtResource("1_tt7e2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=785746265]
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 29.0
+offset_bottom = 38.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852852758]
+position = Vector2(19, 21)
+shape = SubResource("CapsuleShape2D_gqquq")

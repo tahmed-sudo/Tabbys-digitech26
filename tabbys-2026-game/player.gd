@@ -3,16 +3,17 @@ extends CharacterBody2D
 var health = 100
 
 const SPEED = 300.0
-const GRAVITY = 980.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -350.0
 
 @export var health_ui: ProgressBar
 
 
 
-func _ready() -> void:
+func ready() -> void:
 	health_ui.max_value = health
 	health.ui.value = health
+
+
 func _physics_process(delta: float) -> void:
 	
 	velocity += get_gravity() * delta
@@ -27,3 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
+
+
+func _on_spawn_trigger_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xuhycqdapved"]
 
 [ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Player.tscn" id="1_bexhn"]
+[ext_resource type="Script" uid="uid://c2qscjkugucp2" path="res://level.gd" id="1_t7iv1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bexhn"]
 bg_color = Color(1, 0, 0, 1)
@@ -8,10 +9,16 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7iv1"]
 bg_color = Color(0, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bexhn"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(1160, 59)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bexhn"]
+size = Vector2(125, 110)
+
 [node name="Node2D" type="Node2D" unique_id=1871949922]
+script = ExtResource("1_t7iv1")
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1848178871]
 offset_top = -1.0
@@ -331,14 +338,33 @@ offset_bottom = 24.0
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1917986497]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1222714484]
-offset_left = 851.0
-offset_top = 261.0
-offset_right = 1051.0
-offset_bottom = 293.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 339.0
+offset_top = -293.0
+offset_right = 539.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bexhn")
 theme_override_styles/fill = SubResource("StyleBoxFlat_t7iv1")
-value = 78.0
+value = 100.0
 show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1347375447]
+position = Vector2(570, 322)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1996468993]
+offset_left = 994.0
+offset_top = 34.0
+offset_right = 1054.0
+offset_bottom = 83.0
+text = "Health
+"
+label_settings = SubResource("LabelSettings_bexhn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648390045]
 
@@ -358,3 +384,12 @@ position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
 position = Vector2(136, 62)
+
+[node name="Spawn_trigger" type="Area2D" parent="." unique_id=1847600203]
+position = Vector2(852, 557)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_trigger" unique_id=215227318]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_bexhn")
+
+[connection signal="body_entered" from="Spawn_trigger" to="." method="_on_spawn_trigger_body_entered"]
