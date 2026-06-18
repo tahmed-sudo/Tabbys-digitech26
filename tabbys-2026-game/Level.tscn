@@ -389,10 +389,13 @@ position = Vector2(136, 62)
 position = Vector2(852, 557)
 
 [node name="Marker2D" type="Marker2D" parent="Spawn_trigger" unique_id=1208584992]
-position = Vector2(94, 19)
+position = Vector2(-227, -18)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawn_trigger" unique_id=163126112]
-position = Vector2(184, 19)
+position = Vector2(254, -18)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawn_trigger" unique_id=846311706]
+position = Vector2(111, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_trigger" unique_id=215227318]
 position = Vector2(0, -14)
