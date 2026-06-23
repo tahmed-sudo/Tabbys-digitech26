@@ -17,8 +17,16 @@ size = Vector2(1160, 59)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bexhn"]
 size = Vector2(125, 110)
 
-[node name="Node2D" type="Node2D" unique_id=1871949922]
+[node name="Node2D" type="Node2D" unique_id=1871949922 node_paths=PackedStringArray("Spawn")]
 script = ExtResource("1_t7iv1")
+Spawn = NodePath("Spawn_trigger/Marker2D")
+
+[node name="Void" type="ColorRect" parent="." unique_id=1762262963]
+offset_left = -1911.0
+offset_top = -680.0
+offset_right = 2756.0
+offset_bottom = 1415.0
+color = Color(0.12955847, 0.12955844, 0.1295585, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1848178871]
 offset_top = -1.0
@@ -36,7 +44,7 @@ color = Color(0.5858467, 1.8049031e-06, 4.3317675e-07, 1)
 [node name="Polygon2D" type="Polygon2D" parent="house rects" unique_id=1039046204]
 position = Vector2(-5.253147, 9.982164)
 scale = Vector2(0.95490533, 0.9204179)
-color = Color(0.02489823, 0.73318505, 0.77311903, 1)
+color = Color(0.0070697335, 0.37707418, 0.39740655, 1)
 polygon = PackedVector2Array(75.778015, -121.66452, 5.5012207, -10.392883, 147.51892, -10.392883)
 uv = PackedVector2Array(75.778015, -121.66452, 5.5012207, -10.392883, 147.51892, -10.392883)
 
@@ -354,9 +362,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_t7iv1")
 value = 100.0
 show_percentage = false
 
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1347375447]
-position = Vector2(570, 322)
-
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1996468993]
 offset_left = 994.0
 offset_top = 34.0
@@ -383,7 +388,7 @@ shape = SubResource("RectangleShape2D_0rwas")
 position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
-position = Vector2(136, 62)
+position = Vector2(3, 16)
 
 [node name="Spawn_trigger" type="Area2D" parent="." unique_id=1847600203]
 position = Vector2(852, 557)
@@ -401,4 +406,7 @@ position = Vector2(111, -18)
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_bexhn")
 
+[node name="Timer" type="Timer" parent="Spawn_trigger" unique_id=1792243644]
+
 [connection signal="body_entered" from="Spawn_trigger" to="." method="_on_spawn_trigger_body_entered"]
+[connection signal="timeout" from="Spawn_trigger/Timer" to="." method="_on_timer_timeout"]

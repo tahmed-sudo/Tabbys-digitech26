@@ -2,13 +2,18 @@ extends CharacterBody2D
 
 const enemy_SPEED = 150
 
-@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var player = CharacterBody2D
+
+func _ready() -> void:
+	for node in get_tree().get_nodes_in_group("Player"):
+		player = node
 
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
-	move_and_slide()
 	
-	if player: 
-		var diretion = sign(player.global_position.x - global_position.x )
-		velocity.x = diretion * enemy_SPEED
-		
+	if not player == null:
+		var direction = sign(player.position.x - position.x)
+		print(direction)
+		velocity.x = direction * enemy_SPEED
+	
+	move_and_slide()
