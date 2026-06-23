@@ -8,6 +8,16 @@ const JUMP_VELOCITY = -350.0
 @export var health_ui: ProgressBar
 
 
+func _ready() -> void:
+	health_ui.max_value = health
+	health_ui.value = health
+	
+func take_damage() -> void:
+	if health > 0:
+		health -= 100
+		health_ui.value = health
+	else:
+		get_tree().call_deferred("reload_current_scene")
 
 func ready() -> void:
 	health_ui.max_value = health
@@ -26,5 +36,4 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 	
-
 	move_and_slide()

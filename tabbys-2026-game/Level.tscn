@@ -3,14 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Player.tscn" id="1_bexhn"]
 [ext_resource type="Script" uid="uid://c2qscjkugucp2" path="res://level.gd" id="1_t7iv1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bexhn"]
-bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7iv1"]
-bg_color = Color(0, 1, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_bexhn"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(1160, 59)
 
@@ -19,13 +11,13 @@ size = Vector2(125, 110)
 
 [node name="Node2D" type="Node2D" unique_id=1871949922 node_paths=PackedStringArray("Spawn")]
 script = ExtResource("1_t7iv1")
-Spawn = NodePath("Spawn_trigger/Marker2D")
+Spawn = NodePath("Spawn_trigger/SpawnPoints")
 
 [node name="Void" type="ColorRect" parent="." unique_id=1762262963]
-offset_left = -1911.0
-offset_top = -680.0
-offset_right = 2756.0
-offset_bottom = 1415.0
+offset_left = -3763.0
+offset_top = -3593.0
+offset_right = 4618.0
+offset_bottom = 3809.0
 color = Color(0.12955847, 0.12955844, 0.1295585, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1848178871]
@@ -65,10 +57,10 @@ offset_bottom = 95.0
 color = Color(1, 1, 0, 1)
 
 [node name="Cloud rects" type="ColorRect" parent="." unique_id=1236515075]
-offset_left = 176.0
-offset_top = 215.0
-offset_right = 285.0
-offset_bottom = 242.0
+offset_left = 186.0
+offset_top = 316.0
+offset_right = 295.0
+offset_bottom = 343.0
 
 [node name="ColorRect" type="ColorRect" parent="Cloud rects" unique_id=197661346]
 layout_mode = 0
@@ -343,34 +335,6 @@ offset_top = 9.0
 offset_right = 49.840004
 offset_bottom = 24.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1917986497]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1222714484]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 339.0
-offset_top = -293.0
-offset_right = 539.0
-offset_bottom = -261.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_bexhn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_t7iv1")
-value = 100.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1996468993]
-offset_left = 994.0
-offset_top = 34.0
-offset_right = 1054.0
-offset_bottom = 83.0
-text = "Health
-"
-label_settings = SubResource("LabelSettings_bexhn")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648390045]
 
 [node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=528492071]
@@ -388,18 +352,20 @@ shape = SubResource("RectangleShape2D_0rwas")
 position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
-position = Vector2(3, 16)
+position = Vector2(0, -1)
 
 [node name="Spawn_trigger" type="Area2D" parent="." unique_id=1847600203]
 position = Vector2(852, 557)
 
-[node name="Marker2D" type="Marker2D" parent="Spawn_trigger" unique_id=1208584992]
+[node name="SpawnPoints" type="Node2D" parent="Spawn_trigger" unique_id=390284779]
+
+[node name="Marker2D" type="Marker2D" parent="Spawn_trigger/SpawnPoints" unique_id=1208584992]
 position = Vector2(-227, -18)
 
-[node name="Marker2D2" type="Marker2D" parent="Spawn_trigger" unique_id=163126112]
+[node name="Marker2D2" type="Marker2D" parent="Spawn_trigger/SpawnPoints" unique_id=163126112]
 position = Vector2(254, -18)
 
-[node name="Marker2D3" type="Marker2D" parent="Spawn_trigger" unique_id=846311706]
+[node name="Marker2D3" type="Marker2D" parent="Spawn_trigger/SpawnPoints" unique_id=846311706]
 position = Vector2(111, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_trigger" unique_id=215227318]

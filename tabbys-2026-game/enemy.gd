@@ -13,7 +13,11 @@ func _physics_process(delta: float) -> void:
 	
 	if not player == null:
 		var direction = sign(player.position.x - position.x)
-		print(direction)
 		velocity.x = direction * enemy_SPEED
 	
 	move_and_slide()
+	
+func _damage_player(body: Node2D) -> void:
+	if body == player:
+		player.take_damage()
+		
