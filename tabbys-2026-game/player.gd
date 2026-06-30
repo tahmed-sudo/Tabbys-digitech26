@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var health = 100
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -350.0
 
@@ -13,8 +12,9 @@ func _ready() -> void:
 	health_ui.value = health
 	
 func take_damage() -> void:
-	if health > 0:
-		health -= 100
+	
+	if health >= 0: 
+		health -= 10
 		health_ui.value = health
 	else:
 		get_tree().call_deferred("reload_current_scene")

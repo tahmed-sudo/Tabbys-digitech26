@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const enemy_SPEED = 150
+var damage: int = -2
 
 @onready var player = CharacterBody2D
 

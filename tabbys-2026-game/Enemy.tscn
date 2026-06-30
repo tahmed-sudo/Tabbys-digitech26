@@ -5,6 +5,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqquq"]
 height = 34.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tt7e2"]
+radius = 11.0
+height = 38.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1881185564]
 script = ExtResource("1_tt7e2")
 
@@ -18,3 +22,11 @@ color = Color(1, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852852758]
 position = Vector2(19, 21)
 shape = SubResource("CapsuleShape2D_gqquq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=948985192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=308441143]
+position = Vector2(19, 21)
+shape = SubResource("CapsuleShape2D_tt7e2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_damage_player"]

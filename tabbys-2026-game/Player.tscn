@@ -23,6 +23,28 @@ offset_right = 10.0
 offset_bottom = 14.0
 color = Color(0, 0, 1, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=29112551]
+offset_left = 9.087406
+offset_top = 0.27908707
+offset_right = 11.087406
+offset_bottom = 9.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2" unique_id=1215107037]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45600003
+anchor_right = 0.45600003
+offset_left = -3.9994063
+offset_top = -0.27908707
+offset_right = 4.0005937
+offset_bottom = 1.7209129
+color = Color(0, 0, 0, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="ColorRect2/ColorRect" unique_id=262070582]
+color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+polygon = PackedVector2Array(2, 0, 2, -14, 2, -21, 7, -14, 7, 0, 4, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516398449]
 shape = SubResource("CapsuleShape2D_0rwas")
 
