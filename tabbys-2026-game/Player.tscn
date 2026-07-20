@@ -12,6 +12,70 @@ bg_color = Color(0, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kne1u"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhfnw"]
+radius = 3.0
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_xhfnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kpjcp"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.7802359]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kne1u"]
+_data = {
+&"RESET": SubResource("Animation_xhfnw"),
+&"attack": SubResource("Animation_kpjcp")
+}
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=772824052 node_paths=PackedStringArray("health_ui")]
 script = ExtResource("1_xhfnw")
 health_ui = NodePath("CanvasLayer/ProgressBar")
@@ -22,28 +86,6 @@ offset_top = -14.0
 offset_right = 10.0
 offset_bottom = 14.0
 color = Color(0, 0, 1, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=29112551]
-offset_left = 9.087406
-offset_top = 0.27908707
-offset_right = 11.087406
-offset_bottom = 9.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect2" unique_id=1215107037]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45600003
-anchor_right = 0.45600003
-offset_left = -3.9994063
-offset_top = -0.27908707
-offset_right = 4.0005937
-offset_bottom = 1.7209129
-color = Color(0, 0, 0, 1)
-
-[node name="Polygon2D" type="Polygon2D" parent="ColorRect2/ColorRect" unique_id=262070582]
-color = Color(0.45840502, 0.45840508, 0.45840502, 1)
-polygon = PackedVector2Array(2, 0, 2, -14, 2, -21, 7, -14, 7, 0, 4, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516398449]
 shape = SubResource("CapsuleShape2D_0rwas")
@@ -75,3 +117,41 @@ offset_bottom = 83.0
 text = "Health
 "
 label_settings = SubResource("LabelSettings_kne1u")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=766650358]
+position = Vector2(11, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D" unique_id=262070582]
+position = Vector2(-4, -4)
+color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+polygon = PackedVector2Array(2, 0, 1.9999962, -7.990818, 2, -14, 2, -22, 7, -14, 7, 0, 4, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="Node2D" unique_id=1215107037]
+anchors_preset = -1
+anchor_left = 0.45600003
+anchor_right = 0.45600003
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = -2.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D" unique_id=29112551]
+offset_left = -0.91259384
+offset_top = -3.720913
+offset_right = 1.0874062
+offset_bottom = 5.0
+color = Color(0, 0, 0, 1)
+
+[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=2141479073]
+position = Vector2(-10, -4)
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1129349078]
+position = Vector2(-10, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1686713520]
+position = Vector2(11, -9)
+shape = SubResource("CapsuleShape2D_xhfnw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2134957364]
+libraries/ = SubResource("AnimationLibrary_kne1u")

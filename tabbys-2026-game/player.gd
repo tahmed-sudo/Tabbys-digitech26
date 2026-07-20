@@ -37,3 +37,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 	
 	move_and_slide()
+	
+	#player press f big sword go down
+	#enemy go oh no big bad damage to enemies 
