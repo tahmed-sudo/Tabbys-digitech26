@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnwr301cgobt0" path="res://player.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rwas"]
+height = 40.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhfnw"]
 bg_color = Color(1, 0, 0, 1)
@@ -14,14 +15,14 @@ bg_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhfnw"]
 radius = 3.0
-height = 22.0
+height = 36.0
 
 [sub_resource type="Animation" id="Animation_xhfnw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/path = NodePath("Pivot/Node2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Pivot/Node2D/Area2D/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,32 +43,57 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Node2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_kpjcp"]
 resource_name = "attack"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/path = NodePath("Pivot/Node2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 1.7802359]
+"values": [0.0, 1.7802359, 0.010471975]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Pivot/Node2D/Area2D/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.95, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.06, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, false, true]
+"values": [false, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Node2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kne1u"]
@@ -76,18 +102,14 @@ _data = {
 &"attack": SubResource("Animation_kpjcp")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=772824052 node_paths=PackedStringArray("health_ui")]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=772824052 node_paths=PackedStringArray("health_ui", "animation", "pivot")]
 script = ExtResource("1_xhfnw")
 health_ui = NodePath("CanvasLayer/ProgressBar")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=28226388]
-offset_left = -10.0
-offset_top = -14.0
-offset_right = 10.0
-offset_bottom = 14.0
-color = Color(0, 0, 1, 1)
+animation = NodePath("AnimationPlayer")
+pivot = NodePath("Pivot")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516398449]
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_0rwas")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=994970226]
@@ -118,15 +140,26 @@ text = "Health
 "
 label_settings = SubResource("LabelSettings_kne1u")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=766650358]
+[node name="Pivot" type="Node2D" parent="." unique_id=934648885]
+scale = Vector2(-1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Pivot" unique_id=28226388]
+offset_left = -10.0
+offset_top = -27.0
+offset_right = 10.0
+offset_bottom = 14.0
+color = Color(0, 0, 1, 1)
+
+[node name="Node2D" type="Node2D" parent="Pivot" unique_id=766650358]
 position = Vector2(11, 1)
 
-[node name="Polygon2D" type="Polygon2D" parent="Node2D" unique_id=262070582]
+[node name="Polygon2D" type="Polygon2D" parent="Pivot/Node2D" unique_id=262070582]
 position = Vector2(-4, -4)
+scale = Vector2(1, 1.6363637)
 color = Color(0.45840502, 0.45840508, 0.45840502, 1)
 polygon = PackedVector2Array(2, 0, 1.9999962, -7.990818, 2, -14, 2, -22, 7, -14, 7, 0, 4, 0)
 
-[node name="ColorRect3" type="ColorRect" parent="Node2D" unique_id=1215107037]
+[node name="ColorRect3" type="ColorRect" parent="Pivot/Node2D" unique_id=1215107037]
 anchors_preset = -1
 anchor_left = 0.45600003
 anchor_right = 0.45600003
@@ -135,23 +168,27 @@ offset_top = -4.0
 offset_right = 4.0
 offset_bottom = -2.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Node2D" unique_id=29112551]
+[node name="ColorRect2" type="ColorRect" parent="Pivot/Node2D" unique_id=29112551]
 offset_left = -0.91259384
 offset_top = -3.720913
 offset_right = 1.0874062
 offset_bottom = 5.0
 color = Color(0, 0, 0, 1)
 
-[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=2141479073]
+[node name="Marker2D" type="Marker2D" parent="Pivot/Node2D" unique_id=2141479073]
 position = Vector2(-10, -4)
 
-[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1129349078]
+[node name="Area2D" type="Area2D" parent="Pivot/Node2D" unique_id=1129349078]
 position = Vector2(-10, -5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1686713520]
-position = Vector2(11, -9)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Node2D/Area2D" unique_id=1686713520]
+position = Vector2(11, -16)
 shape = SubResource("CapsuleShape2D_xhfnw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2134957364]
 libraries/ = SubResource("AnimationLibrary_kne1u")
+speed_scale = 8.8
+
+[connection signal="body_entered" from="Pivot/Node2D/Area2D" to="." method="_sword_hit"]

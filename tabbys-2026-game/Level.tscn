@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(1160, 59)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7iv1"]
+size = Vector2(16, 589)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bexhn"]
 size = Vector2(125, 110)
 
@@ -348,11 +351,20 @@ color = Color(0, 1, 0, 1)
 position = Vector2(572, 627.5)
 shape = SubResource("RectangleShape2D_0rwas")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=175357792]
+position = Vector2(0, 326)
+shape = SubResource("RectangleShape2D_t7iv1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=467235504]
+position = Vector2(1139, 298)
+shape = SubResource("RectangleShape2D_t7iv1")
+
 [node name="CharacterBody2D" parent="." unique_id=772824052 groups=["Player"] instance=ExtResource("1_bexhn")]
 position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]
 position = Vector2(0, -1)
+zoom = Vector2(1.25, 1.25)
 
 [node name="Spawn_trigger" type="Area2D" parent="." unique_id=1847600203]
 position = Vector2(852, 557)

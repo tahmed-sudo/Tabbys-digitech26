@@ -5,6 +5,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -350.0
 
 @export var health_ui: ProgressBar
+@export var animation: AnimationPlayer
+@export var pivot: Node2D
 
 
 func _ready() -> void:
@@ -30,13 +32,20 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if not direction == pivot.scale.x:
+			pivot.scale.x = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-	
+	if Input.is_action_just_pressed("attack"):
+		animation.play("attack")	
 	move_and_slide()
 	
-	#player press f big sword go down
-	#enemy go oh no big bad damage to enemies 
+	
+
+
+func _sword_hit(body: Node2D) -> void:
+	if body is Enemy:
+		body.take_damage()

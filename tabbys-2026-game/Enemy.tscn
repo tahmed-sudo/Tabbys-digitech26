@@ -3,20 +3,20 @@
 [ext_resource type="Script" uid="uid://dw81wx63luwpc" path="res://enemy.gd" id="1_tt7e2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqquq"]
-height = 34.0
+height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tt7e2"]
-radius = 11.0
-height = 38.0
+radius = 12.0
+height = 44.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1881185564]
 script = ExtResource("1_tt7e2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=785746265]
 offset_left = 9.0
-offset_top = 4.0
+offset_top = 2.0
 offset_right = 29.0
-offset_bottom = 38.0
+offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852852758]

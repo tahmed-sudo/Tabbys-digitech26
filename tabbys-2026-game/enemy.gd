@@ -1,7 +1,10 @@
+class_name Enemy
 extends CharacterBody2D
 
 const enemy_SPEED = 150
 var damage: int = -2
+var enemy_health = 100
+
 
 @onready var player = CharacterBody2D
 
@@ -17,6 +20,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * enemy_SPEED
 	
 	move_and_slide()
+	
+func take_damage() -> void:
+	if enemy_health > 0:
+		enemy_health -= 25
+	else:
+		queue_free()
+	
+
 	
 func _damage_player(body: Node2D) -> void:
 	if body == player:
