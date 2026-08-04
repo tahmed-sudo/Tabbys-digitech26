@@ -2,8 +2,10 @@ class_name Enemy
 extends CharacterBody2D
 
 const enemy_SPEED = 150
+const knockback_DECELARATION = 450
 var damage: int = -2
 var enemy_health = 100
+var is_knock_back = false
 
 
 @onready var player = CharacterBody2D
@@ -18,15 +20,19 @@ func _physics_process(delta: float) -> void:
 	if not player == null:
 		var direction = sign(player.position.x - position.x)
 		velocity.x = direction * enemy_SPEED
+
 	
 	move_and_slide()
 	
-func take_damage() -> void:
+func take_damage() -> bool:
+	var dead: bool = false
 	if enemy_health > 0:
 		enemy_health -= 25
 	else:
+		dead = true
 		queue_free()
-	
+	return dead
+ 
 
 	
 func _damage_player(body: Node2D) -> void:

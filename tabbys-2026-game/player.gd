@@ -13,6 +13,7 @@ func _ready() -> void:
 	health_ui.max_value = health
 	health_ui.value = health
 	
+	
 func take_damage() -> void:
 	
 	if health >= 0: 
@@ -48,4 +49,6 @@ func _physics_process(delta: float) -> void:
 
 func _sword_hit(body: Node2D) -> void:
 	if body is Enemy:
-		body.take_damage()
+		if body.take_damage():
+			health += 10
+			health_ui.value = health
