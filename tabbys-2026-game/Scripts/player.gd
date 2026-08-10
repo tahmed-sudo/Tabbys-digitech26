@@ -13,20 +13,20 @@ func _ready() -> void:
 	health_ui.max_value = health
 	health_ui.value = health
 	
-	
+# Causes player to take damage and respawn when they die
 func take_damage() -> void:
-	
 	if health >= 0: 
 		health -= 10
 		health_ui.value = health
 	else:
 		get_tree().call_deferred("reload_current_scene")
-
+		
+# determines player health and makes sure its full when game is started
 func ready() -> void:
 	health_ui.max_value = health
 	health.ui.value = health
 
-
+# basic movement functions and physics within the game
 func _physics_process(delta: float) -> void:
 	
 	velocity += get_gravity() * delta
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 
-
+ # let player heal and take damage
 func _sword_hit(body: Node2D) -> void:
 	if body is Enemy:
 		if body.take_damage():

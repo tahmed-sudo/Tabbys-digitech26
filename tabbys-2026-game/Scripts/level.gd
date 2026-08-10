@@ -15,7 +15,7 @@ func _on_spawn_trigger_body_entered(body):
 		for point in Spawn.get_children():
 			call_deferred("spawn_enemy", point)
 		
-	
+# Helps the player spawn in the right place
 func spawn_enemy(spawn_point: Marker2D) -> void:
 	var enemy = Enemy_scene.instantiate()
 	enemy.global_position = spawn_point.global_position
