@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xuhycqdapved"]
 
-[ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Player.tscn" id="1_bexhn"]
-[ext_resource type="Script" uid="uid://c2qscjkugucp2" path="res://level.gd" id="1_t7iv1"]
+[ext_resource type="Script" uid="uid://c2qscjkugucp2" path="res://Scripts/level.gd" id="1_vsvp5"]
+[ext_resource type="PackedScene" uid="uid://dsi3kowc0s4hu" path="res://Scenes/Player.tscn" id="2_8rbpu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(1160, 59)
@@ -13,7 +13,7 @@ size = Vector2(16, 589)
 size = Vector2(125, 110)
 
 [node name="Node2D" type="Node2D" unique_id=1871949922 node_paths=PackedStringArray("Spawn")]
-script = ExtResource("1_t7iv1")
+script = ExtResource("1_vsvp5")
 Spawn = NodePath("Spawn_trigger/SpawnPoints")
 
 [node name="Void" type="ColorRect" parent="." unique_id=1762262963]
@@ -359,7 +359,7 @@ shape = SubResource("RectangleShape2D_t7iv1")
 position = Vector2(1139, 298)
 shape = SubResource("RectangleShape2D_t7iv1")
 
-[node name="CharacterBody2D" parent="." unique_id=772824052 groups=["Player"] instance=ExtResource("1_bexhn")]
+[node name="CharacterBody2D" parent="." unique_id=772824052 groups=["Player"] instance=ExtResource("2_8rbpu")]
 position = Vector2(347, 513)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=851884635]

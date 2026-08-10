@@ -13,7 +13,7 @@ var is_knock_back = false
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("Player"):
 		player = node
-
+# creates the basic movement functions in the ganme
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	move_and_slide()
-	
+	# causes enemy to die and take damage and helps player with health siphon
 func take_damage() -> bool:
 	var dead: bool = false
 	if enemy_health > 0:
@@ -34,7 +34,7 @@ func take_damage() -> bool:
 	return dead
  
 
-	
+# causes player to take damaage when enemy collides with player
 func _damage_player(body: Node2D) -> void:
 	if body == player:
 		player.take_damage()

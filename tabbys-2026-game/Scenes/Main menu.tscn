@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bmlpoej4dw73t"]
+
+[ext_resource type="Script" uid="uid://2g4jvttp7p5y" path="res://Scripts/Main_menu.gd" id="1_ef4ur"]
+[ext_resource type="Texture2D" uid="uid://beft5h2xbpree" path="res://assets/krita assesment menu.png" id="2_jxwaj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw8vy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxwaj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw8vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmgbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rmhq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cs3qd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4o84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8fcf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvpfe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsa63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djbbv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqtdq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvt8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qsyk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk3rb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlrqn"]
+
+[node name="Node2D" type="Node2D" unique_id=1226287460]
+script = ExtResource("1_ef4ur")
+
+[node name="Panel" type="Panel" parent="." unique_id=1475148136]
+offset_right = 607.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lw8vy")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1622043245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 545.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jxwaj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1286113566]
+offset_left = 510.0
+offset_top = 210.0
+offset_right = 633.0
+offset_bottom = 436.0
+theme_override_constants/separation = 48
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=456272248]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jxwaj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lw8vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lmgbh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0rmhq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cs3qd")
+text = "PLAY
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=230943763]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p4o84")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x8fcf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yvpfe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bsa63")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_djbbv")
+text = "Help"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2028244557]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qqtdq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rvt8v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qsyk4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rk3rb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wlrqn")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=475233538]
+offset_left = 433.0
+offset_top = 12.0
+offset_right = 777.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 42
+text = "CAAT GAME!!"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

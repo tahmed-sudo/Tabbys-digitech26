@@ -2,13 +2,13 @@ extends Node2D
 
 const JUMP = 400
 
-@export var Enemy_scene: PackedScene = preload ("res://Enemy.tscn")
+@export var Enemy_scene: PackedScene = preload("res://Scenes/Enemy.tscn")
 @export var Spawn: Node2D
 
 
 var has_spawned: bool = false
 var amount: int = 10
-
+# help spawn enemies when player enters a area
 func _on_spawn_trigger_body_entered(body):
 	if body.is_in_group("Player") and not has_spawned:
 		has_spawned = true

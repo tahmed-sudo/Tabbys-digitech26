@@ -50,5 +50,5 @@ func _physics_process(delta: float) -> void:
 func _sword_hit(body: Node2D) -> void:
 	if body is Enemy:
 		if body.take_damage():
-			health += 10
+			health += 20
 			health_ui.value = health

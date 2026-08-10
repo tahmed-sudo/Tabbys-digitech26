@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsi3kowc0s4hu"]
 
-[ext_resource type="Script" uid="uid://cnwr301cgobt0" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://cnwr301cgobt0" path="res://Scripts/player.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rwas"]
 height = 40.0
