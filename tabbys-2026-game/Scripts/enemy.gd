@@ -13,7 +13,7 @@ var is_knock_back = false
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("Player"):
 		player = node
-# creates the basic movement functions in the ganme
+# creates the basic physics for enemies
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	
