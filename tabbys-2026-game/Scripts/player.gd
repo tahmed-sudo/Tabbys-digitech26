@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -350.0
 @export var health_ui: ProgressBar
 @export var animation: AnimationPlayer
 @export var pivot: Node2D
+@export var animated_sprite: AnimatedSprite2D
 
 
 func _ready() -> void:
@@ -42,6 +43,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("attack"):
 		animation.play("attack")	
+	
+	if velocity.x != 0:
+		animated_sprite.play("walk")
+		
+	if velocity.x == 0:
+		animated_sprite.play("idle")
 	move_and_slide()
 	
 	
